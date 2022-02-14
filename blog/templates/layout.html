@@ -20,12 +20,8 @@
 	<!-- Container wrapper -->
 	<div class="container">
 	  <!-- Navbar brand -->
-	  <a class="navbar-brand me-2" href="https://mdbgo.com/">
-	    <img src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp" height="16"
-              alt="MDB Logo"
-              loading="lazy"
-              style="margin-top: -1px;"
-	    />
+	  <a class="navbar-brand me-2" href="{{ url_for('home') }}" >
+	    <img src="" height="16" alt="Logo" loading="lazy" style="margin-top: -1px;"/>
 	  </a>
 	  <!-- Toggle button -->
 	  <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarButtonsExample"
@@ -39,18 +35,17 @@
 	  <div class="collapse navbar-collapse" id="navbarButtonsExample">
 	    <!-- Left links -->
 	    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-		<a class="nav-link" href="#">Blog</a>
-              </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('home') }}">Blog</a>
+          </li>
 	    </ul>
-
-	    <!-- Left links -->
-	    <div class="d-flex align-items-center">
-              <a class="nav-item nav-link" href="{{ url_for('login') }}">Login</a>
-              <a class="nav-item nav-link" href="{{ url_for('register') }}">Register</a>
-              <!-- <a class="btn btn-dark px-3" href="https://github.com/mdbootstrap/mdb-ui-kit" role="button">
-		   <i class="fab fa-github"></i >
-		   </a> -->
+        <!-- Left links -->
+        <div class="d-flex align-items-center">
+          <a class="nav-item nav-link" href="{{ url_for('login') }}">Login</a>
+          <a class="nav-item nav-link" href="{{ url_for('register') }}">Register</a>
+          <!-- <a class="btn btn-dark px-3" href="https://github.com/mdbootstrap/mdb-ui-kit" role="button">
+		       <i class="fab fa-github"></i >
+		       </a> -->
 	    </div>
 	  </div>
 	  <!-- Collapsible wrapper -->

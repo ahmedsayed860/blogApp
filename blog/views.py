@@ -1,9 +1,10 @@
 from flask import render_template
 from blog import app
-from blog.forms import RegisterForm
+from blog.forms import RegisterForm, LoginForm
 
 
 @app.route('/')
+@app.route('/home')
 def home():
     return render_template('home.html')
 
@@ -14,6 +15,7 @@ def register():
     return render_template('register.html', title='Register', form=form)
 
 
-@app.route("/register", methods=['GET', 'POST'])
+@app.route("/login", methods=['GET', 'POST'])
 def login():
-    return render_template('login.html', title='Login')
+    form = LoginForm()
+    return render_template('login.html', title='Login', form=form)

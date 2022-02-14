@@ -18,26 +18,22 @@
         {{ form.email(class="form-control form-control-lg") }}
         {% endif %}
       </div>
-      <div class="form-group">
-        {{ form.password.label(class="form-control-label") }}
-        {% if form.password.errors %}
-        {{ form.password(class="form-control form-control-lg is-invalid") }}
+      <div class="form-group mt-3">
+        {{ form.passwd.label(class="form-control-label") }}
+        {% if form.passwd.errors %}
+        {{ form.passwd(class="form-control form-control-lg is-invalid") }}
         <div class="invalid-feedback">
-          {% for error in form.password.errors %}
+          {% for error in form.passwd.errors %}
           <span>{{ error }}</span>
           {% endfor %}
         </div>
         {% else %}
-        {{ form.password(class="form-control form-control-lg") }}
+        {{ form.passwd(class="form-control form-control-lg") }}
         {% endif %}
       </div>
-      <div class="form-check">
-        {{ form.remember(class="form-check-input") }}
-        {{ form.remember.label(class="form-check-label") }}
-      </div>
     </fieldset>
-    <div class="form-group">
-      {{ form.submit(class="btn btn-outline-info") }}
+    <div class="form-group mt-3 mb-2">
+      {{ form.submit(class="btn btn-dark") }}
     </div>
     <small class="text-muted ml-2">
       <a href="#">Forgot Password?</a>
