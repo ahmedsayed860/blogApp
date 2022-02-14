@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}"> -->
+    {% if title %}
+    <title>Flask Blog - {{ title }}</title>
+    {% else %}
+    <title>Flask Blog</title>
+    {% endif %}
+  </head>
+  <body>
+    <header class="site-header">
+     <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-steel " style=" background-color: #5f788a;">
+	<!-- Container wrapper -->
+	<div class="container">
+	  <!-- Navbar brand -->
+	  <a class="navbar-brand me-2" href="https://mdbgo.com/">
+	    <img src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp" height="16"
+              alt="MDB Logo"
+              loading="lazy"
+              style="margin-top: -1px;"
+	    />
+	  </a>
+	  <!-- Toggle button -->
+	  <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarButtonsExample"
+	    aria-controls="navbarButtonsExample"
+	    aria-expanded="false"
+	    aria-label="Toggle navigation">
+	    <i class="fas fa-bars"></i>
+	  </button>
+
+	  <!-- Collapsible wrapper -->
+	  <div class="collapse navbar-collapse" id="navbarButtonsExample">
+	    <!-- Left links -->
+	    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+		<a class="nav-link" href="#">Blog</a>
+              </li>
+	    </ul>
+
+	    <!-- Left links -->
+	    <div class="d-flex align-items-center">
+              <a class="nav-item nav-link" href="{{ url_for('login') }}">Login</a>
+              <a class="nav-item nav-link" href="{{ url_for('register') }}">Register</a>
+              <!-- <a class="btn btn-dark px-3" href="https://github.com/mdbootstrap/mdb-ui-kit" role="button">
+		   <i class="fab fa-github"></i >
+		   </a> -->
+	    </div>
+	  </div>
+	  <!-- Collapsible wrapper -->
+	</div>
+	<!-- Container wrapper -->
+      </nav>
+      <!-- Navbar -->
+    </header>
+    <main role="main" class="container mt-5">
+      <div class="row">
+        <div class="col-md-8">
+          {% block content %}{% endblock %}
+        </div>
+        <div class="col-md-4">
+          <div class="content-section">
+            <h3>Our Sidebar</h3>
+            <p class='text-muted'>You can put any information here you'd like.
+              <ul class="list-group">
+                <li class="list-group-item list-group-item-light">Latest Posts</li>
+                <li class="list-group-item list-group-item-light">Announcements</li>
+                <li class="list-group-item list-group-item-light">Calendars</li>
+                <li class="list-group-item list-group-item-light">etc</li>
+              </ul>
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
