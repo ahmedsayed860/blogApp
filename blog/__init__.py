@@ -1,16 +1,16 @@
-from flask import Flask, render_template
+from flask import Flask
 from flask_bootstrap import Bootstrap5
-from flask_fontawesome import FontAwesome
+# from flask_fontawesome import FontAwesome
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_login import LoginManager
 
 
 bootstrap = Bootstrap5()
-fontawesome = FontAwesome()
 db = SQLAlchemy()
 migrate = Migrate()
 login_manager = LoginManager()
+# fa = FontAwesome()
 
 
 def create_app():
@@ -22,20 +22,17 @@ def create_app():
 
 
 	# Init extension for the application
-	fontawesome.init_app(app)
+	# fa.init_app(app)
 	bootstrap.init_app(app)
 	db.init_app(app)
 	migrate.init_app(app, db)
 	login_manager.init_app(app)
 
 	# Blueprint
+	from .main.views import main as main_bp
 	from .auth.views import auth as auth_bp
+	app.register_blueprint(main_bp)
 	app.register_blueprint(auth_bp)
-
-	# index View
-	@app.route('/')
-	def index():
-		return render_template("index.html")
 
 	# db instance
 	from blog.auth.models import Users
